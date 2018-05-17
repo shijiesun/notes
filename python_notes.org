@@ -63,6 +63,15 @@
   round(3.14) //四舍五入
 #+END_SRC
 
+
+#+BEGIN_SRC python
+  import decimal
+
+  0.1 + 0.1 + 0.1 - 0.3  //结果不对
+  decimal.Decimal(0.1) + decimal.Decimal(0.1) + decimal.Decimal(0.1) - decimal.Decimal(0.3) // error
+  decimal.Decimal('0.1') + decimal.Decimal('0.1') + decimal.Decimal('0.1') - decimal.Decimal('0.3')
+#+END_SRC
+
 ** 序列
 ** 集合
 ** 映射
@@ -79,4 +88,11 @@ type(obj)
 *** 空对象
 None
 *** 布尔
-bool
+本质上True 对应int 1,False 对应int 0, 但仍然可以转换
+
+真值测试: 0, 0.0 None,空对象,空字符串,空映射等转换成False,其他都是True
+#+BEGIN_SRC python
+  bool(3)  True
+
+  bool(-3) True
+#+END_SRC
