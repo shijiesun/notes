@@ -19,6 +19,64 @@
 * 内置核心数据类型
 尽量不要自定义类型
 内置类型效率更高
+
+
+
 ** 数值
+*** int
+没有长度限制,可以处理非常大的数字
+0b1 0o7 0x7ff
+*** float
+3.14e5
+*** 运算符
+
+#+BEGIN_SRC python
+  ** 计算次方
+  // 整除
+
+21 // 7    3
+21 / 7     3.0
+#+END_SRC
+*** 常用函数
+
+#+BEGIN_SRC python
+  10 + int("30")
+  10 + int("1101", 2) //转换成2进制
+  float("3.13") * 2
+  bin(10) //0b11  转换成2进制
+  hex(10)
+  oct(10)
+#+END_SRC
+
+*** 工具模块
+
+#+BEGIN_SRC python
+  import math
+
+  x = 22 / 7
+  math.floor(x)  //向下取值
+
+  math.trunc(3.14)  //向0取值
+
+  math.ceil(3.14) //向上取值
+
+  round(3.14) //四舍五入
+#+END_SRC
+
 ** 序列
 ** 集合
+** 映射
+** 程序单元类型
+** 其他
+#+BEGIN_SRC python
+  type(8)
+
+  x is None
+#+END_SRC
+*** 类型对象
+type(obj)
+
+*** 空对象
+None
+*** 布尔
+bool
