@@ -3,7 +3,7 @@
 "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
 <head>
-<!-- 2018-05-18 Fri 10:27 -->
+<!-- 2018-05-18 Fri 10:47 -->
 <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>python notes</title>
@@ -256,63 +256,63 @@ for the JavaScript code in this tag.
 <h2>Table of Contents</h2>
 <div id="text-table-of-contents">
 <ul>
-<li><a href="#orgb25e498">1. 类型</a></li>
-<li><a href="#org49efe22">2. 内置核心数据类型</a></li>
-<li><a href="#org6fc1847">3. 数值</a>
+<li><a href="#orgb954a39">1. 类型</a></li>
+<li><a href="#org976f28d">2. 内置核心数据类型</a></li>
+<li><a href="#orgbb6ade5">3. 数值</a>
 <ul>
-<li><a href="#org30a7740">3.1. int</a></li>
-<li><a href="#org1397e31">3.2. float</a></li>
-<li><a href="#orgb25358a">3.3. 运算符</a></li>
-<li><a href="#org3dca31e">3.4. 常用函数</a></li>
-<li><a href="#orgd9f2f2b">3.5. 工具模块</a></li>
+<li><a href="#org199835f">3.1. int</a></li>
+<li><a href="#org8c82812">3.2. float</a></li>
+<li><a href="#org091eff0">3.3. 运算符</a></li>
+<li><a href="#orgacdc4b8">3.4. 常用函数</a></li>
+<li><a href="#orgd6b9e58">3.5. 工具模块</a></li>
 </ul>
 </li>
-<li><a href="#orgf96db18">4. 序列</a>
+<li><a href="#orgf9a19a5">4. 序列</a>
 <ul>
-<li><a href="#org7c6e7f5">4.1. 可变序列</a>
+<li><a href="#org731d990">4.1. 可变序列</a>
 <ul>
-<li><a href="#org62dccc3">4.1.1. list</a></li>
-<li><a href="#orgb007574">4.1.2. 通用操作</a></li>
+<li><a href="#orgaad640c">4.1.1. list</a></li>
+<li><a href="#org342fe9f">4.1.2. 通用操作</a></li>
 </ul>
 </li>
-<li><a href="#orga1ded3f">4.2. 不可变序列</a>
+<li><a href="#orgb55500f">4.2. 不可变序列</a>
 <ul>
-<li><a href="#orgd4b4e69">4.2.1. tuple</a></li>
-<li><a href="#orgd8785b0">4.2.2. range</a></li>
-<li><a href="#org4240f38">4.2.3. 字符串 str</a></li>
+<li><a href="#orgb58ac32">4.2.1. tuple</a></li>
+<li><a href="#orgca23644">4.2.2. range</a></li>
+<li><a href="#orgcaf3491">4.2.3. 字符串 str</a></li>
 </ul>
 </li>
-<li><a href="#orgb09179f">4.3. 通用操作</a></li>
+<li><a href="#org33785f6">4.3. 通用操作</a></li>
 </ul>
 </li>
-<li><a href="#org4f13d97">5. 集合</a></li>
-<li><a href="#org5b20b45">6. 映射</a>
+<li><a href="#org8abd43d">5. 集合</a></li>
+<li><a href="#org164976b">6. 映射</a>
 <ul>
-<li><a href="#org034ec53">6.1. dict 字典表</a>
+<li><a href="#org6b9c6db">6.1. dict 字典表</a>
 <ul>
-<li><a href="#orga838d2c">6.1.1. 特性</a></li>
-<li><a href="#orge80baf2">6.1.2. 声明</a></li>
-<li><a href="#org314d48a">6.1.3. 常用操作</a></li>
-<li><a href="#org4554984">6.1.4. 其他操作</a></li>
+<li><a href="#org76baafa">6.1.1. 特性</a></li>
+<li><a href="#orgbf48b48">6.1.2. 声明</a></li>
+<li><a href="#org5601fa7">6.1.3. 常用操作</a></li>
+<li><a href="#org08ededa">6.1.4. 其他操作</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#org88a96fc">7. 文件</a></li>
-<li><a href="#org6b284d0">8. 程序单元类型</a></li>
-<li><a href="#org74aecc1">9. 其他</a>
+<li><a href="#org151a00c">7. 文件</a></li>
+<li><a href="#orgbd82f78">8. 程序单元类型</a></li>
+<li><a href="#org49e151e">9. 其他</a>
 <ul>
-<li><a href="#org0d9d9ee">9.1. 类型对象</a></li>
-<li><a href="#org782d6b4">9.2. 空对象</a></li>
-<li><a href="#orgbe0d10c">9.3. 布尔</a></li>
+<li><a href="#org03800fb">9.1. 类型对象</a></li>
+<li><a href="#orgc83a0d4">9.2. 空对象</a></li>
+<li><a href="#orgf6467f6">9.3. 布尔</a></li>
 </ul>
 </li>
 </ul>
 </div>
 </div>
 
-<div id="orgb25e498" class="outline-2">
-<h2 id="orgb25e498"><span class="section-number-2">1</span> 类型</h2>
+<div id="orgb954a39" class="outline-2">
+<h2 id="orgb954a39"><span class="section-number-2">1</span> 类型</h2>
 <div class="outline-text-2" id="text-1">
 <p>
 动态类型  强类型变量无类型约束对象本身带有类型描述和引用计数器共享引用,多个变量引用同一个对象
@@ -334,8 +334,8 @@ a <span style="color: #859900; font-weight: bold;">is</span> b  //&#21028;&#2602
 </div>
 </div>
 
-<div id="org49efe22" class="outline-2">
-<h2 id="org49efe22"><span class="section-number-2">2</span> 内置核心数据类型</h2>
+<div id="org976f28d" class="outline-2">
+<h2 id="org976f28d"><span class="section-number-2">2</span> 内置核心数据类型</h2>
 <div class="outline-text-2" id="text-2">
 <p>
 尽量不要自定义类型内置类型效率更高
@@ -343,12 +343,12 @@ a <span style="color: #859900; font-weight: bold;">is</span> b  //&#21028;&#2602
 </div>
 </div>
 
-<div id="org6fc1847" class="outline-2">
-<h2 id="org6fc1847"><span class="section-number-2">3</span> 数值</h2>
+<div id="orgbb6ade5" class="outline-2">
+<h2 id="orgbb6ade5"><span class="section-number-2">3</span> 数值</h2>
 <div class="outline-text-2" id="text-3">
 </div>
-<div id="org30a7740" class="outline-3">
-<h3 id="org30a7740"><span class="section-number-3">3.1</span> int</h3>
+<div id="org199835f" class="outline-3">
+<h3 id="org199835f"><span class="section-number-3">3.1</span> int</h3>
 <div class="outline-text-3" id="text-3-1">
 <p>
 没有长度限制,可以处理非常大的数字
@@ -356,16 +356,16 @@ a <span style="color: #859900; font-weight: bold;">is</span> b  //&#21028;&#2602
 </p>
 </div>
 </div>
-<div id="org1397e31" class="outline-3">
-<h3 id="org1397e31"><span class="section-number-3">3.2</span> float</h3>
+<div id="org8c82812" class="outline-3">
+<h3 id="org8c82812"><span class="section-number-3">3.2</span> float</h3>
 <div class="outline-text-3" id="text-3-2">
 <p>
 3.14e5
 </p>
 </div>
 </div>
-<div id="orgb25358a" class="outline-3">
-<h3 id="orgb25358a"><span class="section-number-3">3.3</span> 运算符</h3>
+<div id="org091eff0" class="outline-3">
+<h3 id="org091eff0"><span class="section-number-3">3.3</span> 运算符</h3>
 <div class="outline-text-3" id="text-3-3">
 <div class="org-src-container">
 <pre class="src src-python">  ** &#35745;&#31639;&#27425;&#26041;
@@ -377,8 +377,8 @@ a <span style="color: #859900; font-weight: bold;">is</span> b  //&#21028;&#2602
 </div>
 </div>
 </div>
-<div id="org3dca31e" class="outline-3">
-<h3 id="org3dca31e"><span class="section-number-3">3.4</span> 常用函数</h3>
+<div id="orgacdc4b8" class="outline-3">
+<h3 id="orgacdc4b8"><span class="section-number-3">3.4</span> 常用函数</h3>
 <div class="outline-text-3" id="text-3-4">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #6c71c4;">10</span> + <span style="color: #839496; font-weight: bold;">int</span>(<span style="color: #2aa198;">"30"</span>)
@@ -392,8 +392,8 @@ a <span style="color: #859900; font-weight: bold;">is</span> b  //&#21028;&#2602
 </div>
 </div>
 
-<div id="orgd9f2f2b" class="outline-3">
-<h3 id="orgd9f2f2b"><span class="section-number-3">3.5</span> 工具模块</h3>
+<div id="orgd6b9e58" class="outline-3">
+<h3 id="orgd6b9e58"><span class="section-number-3">3.5</span> 工具模块</h3>
 <div class="outline-text-3" id="text-3-5">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #859900; font-weight: bold;">import</span> math
@@ -422,16 +422,16 @@ decimal.Decimal(<span style="color: #2aa198;">'0.1'</span>) + decimal.Decimal(<s
 </div>
 </div>
 
-<div id="orgf96db18" class="outline-2">
-<h2 id="orgf96db18"><span class="section-number-2">4</span> 序列</h2>
+<div id="orgf9a19a5" class="outline-2">
+<h2 id="orgf9a19a5"><span class="section-number-2">4</span> 序列</h2>
 <div class="outline-text-2" id="text-4">
 </div>
-<div id="org7c6e7f5" class="outline-3">
-<h3 id="org7c6e7f5"><span class="section-number-3">4.1</span> 可变序列</h3>
+<div id="org731d990" class="outline-3">
+<h3 id="org731d990"><span class="section-number-3">4.1</span> 可变序列</h3>
 <div class="outline-text-3" id="text-4-1">
 </div>
-<div id="org62dccc3" class="outline-4">
-<h4 id="org62dccc3"><span class="section-number-4">4.1.1</span> list</h4>
+<div id="orgaad640c" class="outline-4">
+<h4 id="orgaad640c"><span class="section-number-4">4.1.1</span> list</h4>
 <div class="outline-text-4" id="text-4-1-1">
 <ol class="org-ol">
 <li>可包含任意对象的有序集合</li>
@@ -459,8 +459,8 @@ scores.append(x)
 </div>
 </div>
 
-<div id="orgb007574" class="outline-4">
-<h4 id="orgb007574"><span class="section-number-4">4.1.2</span> 通用操作</h4>
+<div id="org342fe9f" class="outline-4">
+<h4 id="org342fe9f"><span class="section-number-4">4.1.2</span> 通用操作</h4>
 <div class="outline-text-4" id="text-4-1-2">
 <p>
 改变某个元素的值 s[i] = x
@@ -504,15 +504,15 @@ s.remove(x) //只删除第一个匹配的值清空 s.clear()
 
  l.remove(<span style="color: #6c71c4;">2</span>)
 
- l.extend([<span style="color: #6c71c4;">9</span>, <span style="color: #6c71c4;">10</span>]);
+ l.extend([<span style="color: #6c71c4;">9</span>, <span style="color: #6c71c4;">10</span>])
 
- l.insert(<span style="color: #6c71c4;">3</span>, <span style="color: #6c71c4;">100</span>);
+ l.insert(<span style="color: #6c71c4;">3</span>, <span style="color: #6c71c4;">100</span>)
 
- <span style="color: #268bd2;">l</span>[<span style="color: #6c71c4;">2</span>:<span style="color: #6c71c4;">2</span>] = <span style="color: #6c71c4;">101</span>;
+ <span style="color: #268bd2;">l</span>[<span style="color: #6c71c4;">2</span>:<span style="color: #6c71c4;">2</span>] = <span style="color: #6c71c4;">101</span>
 
- <span style="color: #268bd2;">s</span> = l; //&#20849;&#20139;&#24341;&#29992;
- <span style="color: #268bd2;">s</span> = l[:];  //&#22797;&#21046;&#20869;&#23481;
- <span style="color: #268bd2;">s</span> = l.copy();
+ <span style="color: #268bd2;">s</span> = l //&#20849;&#20139;&#24341;&#29992;
+ <span style="color: #268bd2;">s</span> = l[:]  //&#22797;&#21046;&#20869;&#23481;
+ <span style="color: #268bd2;">s</span> = l.copy()
 
  people.sort(key=<span style="color: #859900; font-weight: bold;">lambda</span> x:x[-<span style="color: #6c71c4;">1</span>])
 
@@ -528,19 +528,19 @@ s.remove(x) //只删除第一个匹配的值清空 s.clear()
 </div>
 </div>
 
-<div id="orga1ded3f" class="outline-3">
-<h3 id="orga1ded3f"><span class="section-number-3">4.2</span> 不可变序列</h3>
+<div id="orgb55500f" class="outline-3">
+<h3 id="orgb55500f"><span class="section-number-3">4.2</span> 不可变序列</h3>
 <div class="outline-text-3" id="text-4-2">
 </div>
-<div id="orgd4b4e69" class="outline-4">
-<h4 id="orgd4b4e69"><span class="section-number-4">4.2.1</span> tuple</h4>
+<div id="orgb58ac32" class="outline-4">
+<h4 id="orgb58ac32"><span class="section-number-4">4.2.1</span> tuple</h4>
 <div class="outline-text-4" id="text-4-2-1">
 <p>
 固定长度
 </p>
 
 <div class="org-src-container">
-<pre class="src src-python"><span style="color: #268bd2;">t</span> = ();
+<pre class="src src-python"><span style="color: #268bd2;">t</span> = ()
 <span style="color: #268bd2;">t</span> = (<span style="color: #6c71c4;">1</span>, <span style="color: #6c71c4;">3</span>, <span style="color: #6c71c4;">3</span>)
 <span style="color: #268bd2;">t</span> = (<span style="color: #6c71c4;">1</span>, <span style="color: #6c71c4;">2</span>, <span style="color: #6c71c4;">3</span>, (<span style="color: #6c71c4;">99</span>, <span style="color: #6c71c4;">100</span>), <span style="color: #2aa198;">"tom"</span>)
 
@@ -563,8 +563,8 @@ t3[<span style="color: #6c71c4;">0</span>:<span style="color: #6c71c4;">2</span>
 </div>
 </div>
 </div>
-<div id="orgd8785b0" class="outline-4">
-<h4 id="orgd8785b0"><span class="section-number-4">4.2.2</span> range</h4>
+<div id="orgca23644" class="outline-4">
+<h4 id="orgca23644"><span class="section-number-4">4.2.2</span> range</h4>
 <div class="outline-text-4" id="text-4-2-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #839496; font-weight: bold;">range</span>(<span style="color: #6c71c4;">4</span>)
@@ -578,8 +578,8 @@ t3[<span style="color: #6c71c4;">0</span>:<span style="color: #6c71c4;">2</span>
 </div>
 </div>
 
-<div id="org4240f38" class="outline-4">
-<h4 id="org4240f38"><span class="section-number-4">4.2.3</span> 字符串 str</h4>
+<div id="orgcaf3491" class="outline-4">
+<h4 id="orgcaf3491"><span class="section-number-4">4.2.3</span> 字符串 str</h4>
 <div class="outline-text-4" id="text-4-2-3">
 <ol class="org-ol">
 <li>特性</li>
@@ -665,8 +665,8 @@ s.endswith()
 
 
 
-<div id="orgb09179f" class="outline-3">
-<h3 id="orgb09179f"><span class="section-number-3">4.3</span> 通用操作</h3>
+<div id="org33785f6" class="outline-3">
+<h3 id="org33785f6"><span class="section-number-3">4.3</span> 通用操作</h3>
 <div class="outline-text-3" id="text-4-3">
 <p>
 判断元素时否在序列之内 x in s  x not in s
@@ -726,19 +726,19 @@ l.count(<span style="color: #6c71c4;">2</span>) // <span style="color: #6c71c4;"
 </div>
 </div>
 
-<div id="org4f13d97" class="outline-2">
-<h2 id="org4f13d97"><span class="section-number-2">5</span> 集合</h2>
+<div id="org8abd43d" class="outline-2">
+<h2 id="org8abd43d"><span class="section-number-2">5</span> 集合</h2>
 </div>
-<div id="org5b20b45" class="outline-2">
-<h2 id="org5b20b45"><span class="section-number-2">6</span> 映射</h2>
+<div id="org164976b" class="outline-2">
+<h2 id="org164976b"><span class="section-number-2">6</span> 映射</h2>
 <div class="outline-text-2" id="text-6">
 </div>
-<div id="org034ec53" class="outline-3">
-<h3 id="org034ec53"><span class="section-number-3">6.1</span> dict 字典表</h3>
+<div id="org6b9c6db" class="outline-3">
+<h3 id="org6b9c6db"><span class="section-number-3">6.1</span> dict 字典表</h3>
 <div class="outline-text-3" id="text-6-1">
 </div>
-<div id="orga838d2c" class="outline-4">
-<h4 id="orga838d2c"><span class="section-number-4">6.1.1</span> 特性</h4>
+<div id="org76baafa" class="outline-4">
+<h4 id="org76baafa"><span class="section-number-4">6.1.1</span> 特性</h4>
 <div class="outline-text-4" id="text-6-1-1">
 <p>
 键值对  无需 可变映射  哈希表
@@ -746,8 +746,8 @@ l.count(<span style="color: #6c71c4;">2</span>) // <span style="color: #6c71c4;"
 </div>
 </div>
 
-<div id="orge80baf2" class="outline-4">
-<h4 id="orge80baf2"><span class="section-number-4">6.1.2</span> 声明</h4>
+<div id="orgbf48b48" class="outline-4">
+<h4 id="orgbf48b48"><span class="section-number-4">6.1.2</span> 声明</h4>
 <div class="outline-text-4" id="text-6-1-2">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">d</span> = {}
@@ -768,8 +768,8 @@ l.count(<span style="color: #6c71c4;">2</span>) // <span style="color: #6c71c4;"
 </div>
 </div>
 
-<div id="org314d48a" class="outline-4">
-<h4 id="org314d48a"><span class="section-number-4">6.1.3</span> 常用操作</h4>
+<div id="org5601fa7" class="outline-4">
+<h4 id="org5601fa7"><span class="section-number-4">6.1.3</span> 常用操作</h4>
 <div class="outline-text-4" id="text-6-1-3">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #268bd2;">employee</span> = <span style="color: #839496; font-weight: bold;">dict</span>(name=<span style="color: #2aa198;">'tom'</span>, age=<span style="color: #6c71c4;">20</span>, salary=<span style="color: #6c71c4;">3900</span>.<span style="color: #6c71c4;">00</span>)
@@ -790,7 +790,7 @@ employee.get(<span style="color: #2aa198;">'hell'</span>, <span style="color: #2
 
 employee.values() //&#29305;&#24615;&#21516;keys
 
-<span style="color: #268bd2;">items</span> = employee.items();  //&#29305;&#24615;&#21516;keys
+<span style="color: #268bd2;">items</span> = employee.items()  //&#29305;&#24615;&#21516;keys
 
 <span style="color: #859900; font-weight: bold;">for</span> (k, v) <span style="color: #859900; font-weight: bold;">in</span> employee.items():
     <span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">'{0} -&gt; {1}'</span>.<span style="color: #839496; font-weight: bold;">format</span>(k, v))
@@ -800,8 +800,8 @@ employee.values() //&#29305;&#24615;&#21516;keys
 </div>
 </div>
 
-<div id="org4554984" class="outline-4">
-<h4 id="org4554984"><span class="section-number-4">6.1.4</span> 其他操作</h4>
+<div id="org08ededa" class="outline-4">
+<h4 id="org08ededa"><span class="section-number-4">6.1.4</span> 其他操作</h4>
 <div class="outline-text-4" id="text-6-1-4">
 <div class="org-src-container">
 <pre class="src src-python">employee.cpoy()
@@ -831,8 +831,8 @@ employee.popitem()  //&#24377;&#20986;&#19968;&#20010;&#38190;&#20540;&#23545;
 </div>
 
 
-<div id="org88a96fc" class="outline-2">
-<h2 id="org88a96fc"><span class="section-number-2">7</span> 文件</h2>
+<div id="org151a00c" class="outline-2">
+<h2 id="org151a00c"><span class="section-number-2">7</span> 文件</h2>
 <div class="outline-text-2" id="text-7">
 <p>
 模式　文本　r w a
@@ -913,17 +913,45 @@ course.close()
 
 
 
-<div id="org6b284d0" class="outline-2">
-<h2 id="org6b284d0"><span class="section-number-2">8</span> 程序单元类型</h2>
+<div id="orgbd82f78" class="outline-2">
+<h2 id="orgbd82f78"><span class="section-number-2">8</span> 程序单元类型</h2>
 <div class="outline-text-2" id="text-8">
 <p>
 强制缩进, 建议使用四个空格
 </p>
+
+<div class="org-src-container">
+<pre class="src src-python"><span style="color: #268bd2;">a</span>, <span style="color: #268bd2;">b</span>, <span style="color: #268bd2;">c</span>, <span style="color: #268bd2;">d</span> = <span style="color: #2aa198;">'&#20248;&#21697;&#35838;&#22530;'</span>
+
+a, *<span style="color: #268bd2;">b</span> = <span style="color: #2aa198;">'&#20248;&#21697;&#35838;&#22530;'</span> // <span style="color: #268bd2;">a</span>=&#20248; <span style="color: #268bd2;">b</span>=&#21697;&#35838;&#22530;
+
+a, *<span style="color: #268bd2;">b</span>, <span style="color: #268bd2;">c</span> = <span style="color: #2aa198;">'&#20248;&#21697;&#35838;&#22530;'</span>
+
+<span style="color: #268bd2;">a</span> = <span style="color: #268bd2;">b</span> = <span style="color: #6c71c4;">5</span>
+
+<span style="color: #268bd2;">name</span> = <span style="color: #2aa198;">'jerry'</span>
+<span style="color: #268bd2;">job</span> = <span style="color: #2aa198;">'test'</span>
+<span style="color: #268bd2;">salary</span> = <span style="color: #6c71c4;">123</span>.<span style="color: #6c71c4;">34334</span>
+
+<span style="color: #859900; font-weight: bold;">print</span>(name, job, salary, sep=<span style="color: #2aa198;">" | "</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"="</span> * <span style="color: #6c71c4;">30</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(name, end=<span style="color: #2aa198;">","</span>)
+<span style="color: #859900; font-weight: bold;">print</span>(job, end=<span style="color: #2aa198;">","</span>)
+<span style="color: #859900; font-weight: bold;">print</span>(salary)
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"="</span> * <span style="color: #6c71c4;">30</span>)
+
+<span style="color: #859900; font-weight: bold;">print</span>(<span style="color: #2aa198;">"&#34218;&#36164; {:12,.2f}"</span>.<span style="color: #839496; font-weight: bold;">format</span>(salary))
+
+</pre>
+</div>
 </div>
 </div>
 
-<div id="org74aecc1" class="outline-2">
-<h2 id="org74aecc1"><span class="section-number-2">9</span> 其他</h2>
+<div id="org49e151e" class="outline-2">
+<h2 id="org49e151e"><span class="section-number-2">9</span> 其他</h2>
 <div class="outline-text-2" id="text-9">
 <div class="org-src-container">
 <pre class="src src-python"><span style="color: #839496; font-weight: bold;">type</span>(<span style="color: #6c71c4;">8</span>)
@@ -932,8 +960,8 @@ x <span style="color: #859900; font-weight: bold;">is</span> <span style="color:
 </pre>
 </div>
 </div>
-<div id="org0d9d9ee" class="outline-3">
-<h3 id="org0d9d9ee"><span class="section-number-3">9.1</span> 类型对象</h3>
+<div id="org03800fb" class="outline-3">
+<h3 id="org03800fb"><span class="section-number-3">9.1</span> 类型对象</h3>
 <div class="outline-text-3" id="text-9-1">
 <p>
 type(obj)
@@ -941,16 +969,16 @@ type(obj)
 </div>
 </div>
 
-<div id="org782d6b4" class="outline-3">
-<h3 id="org782d6b4"><span class="section-number-3">9.2</span> 空对象</h3>
+<div id="orgc83a0d4" class="outline-3">
+<h3 id="orgc83a0d4"><span class="section-number-3">9.2</span> 空对象</h3>
 <div class="outline-text-3" id="text-9-2">
 <p>
 None
 </p>
 </div>
 </div>
-<div id="orgbe0d10c" class="outline-3">
-<h3 id="orgbe0d10c"><span class="section-number-3">9.3</span> 布尔</h3>
+<div id="orgf6467f6" class="outline-3">
+<h3 id="orgf6467f6"><span class="section-number-3">9.3</span> 布尔</h3>
 <div class="outline-text-3" id="text-9-3">
 <p>
 本质上True 对应int 1,False 对应int 0, 但仍然可以转换
@@ -972,7 +1000,7 @@ None
 <div id="postamble" class="status">
 <p class="date">Date: 2018-05-17 Thu 00:00</p>
 <p class="author">Author: 孙士杰</p>
-<p class="date">Created: 2018-05-18 Fri 10:27</p>
+<p class="date">Created: 2018-05-18 Fri 10:47</p>
 <p class="validation"><a href="http://validator.w3.org/check?uri=referer">Validate</a></p>
 </div>
 </body>
