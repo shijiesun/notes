@@ -259,7 +259,10 @@ str.replace(old, new, n)
   '{0:<10} = {1:>12}'.format('abc', 123.344) //左对齐 右对齐
 
   pi = 3.14159
-  '{.f} {.2f} {06.2f}'.format(pi, pi,pi) //浮点数格式
+  '{:f} {:.2f} {:06.2f}'.format(pi, pi,pi) //浮点数格式
+
+  n = 230
+  '{:X} {:o} {:b}'.format(n, n, n) //进制展示
 
 #+END_SRC
 
@@ -321,7 +324,151 @@ min(s) max(s) sum(s) count(s)
 
 * 集合
 * 映射
+** dict 字典表
+*** 特性
+键值对  无需 可变映射  哈希表
+
+*** 声明
+#+BEGIN_SRC python
+  d = {}
+
+  employee = {'name':'tom', 'age':20, 'salary':3900.00}
+
+  employee = dict(name='tom', age=20, salary=3900.00)
+
+  lst = [('name', 'tom'), ('age', 20)]
+
+  employee = dict(lst)
+
+  keys = ['name', 'age', 'salary']
+
+  a = dict.fromkeys(keys)
+#+END_SRC
+
+*** 常用操作
+
+
+#+BEGIN_SRC python
+  employee = dict(name='tom', age=20, salary=3900.00)
+  'name' in emp
+
+  employee['name'] //如果没有会抛异常
+
+  employee.get('name') //不会抛异常
+
+  employee.get('hell', 'default')
+
+  keys = employee.keys()  //这里返回的不是列表,但是可以转换成列表,并且可以遍历
+
+  for k in keys:
+      peint(k)
+
+  ks = dist(keys)
+
+  employee.values() //特性同keys
+
+  items = employee.items();  //特性同keys
+
+  for (k, v) in employee.items():
+      print('{0} -> {1}'.format(k, v))
+
+#+END_SRC
+
+*** 其他操作
+
+
+#+BEGIN_SRC python
+  employee.cpoy()
+
+  employee.clear()
+
+  employee1 = {}
+
+
+  employee.update(employee1) //合并
+
+  del employee['name']
+
+  employee.pop('name')
+
+  employee.pop('name', None) //找不到也不抛异常
+
+  employee.popitem()  //弹出一个键值对
+
+  //函数也可以放入字典表
+
+#+END_SRC
+
+
+* 文件
+模式　文本　r w a
+　　　二进制　ｂ
+
+
+read(N) //一次性读取的字节(b)或字符数(rwa)
+
+lst = readlines() //所有内容存储到序列
+
+readline()
+
+读取一行的内容会带上换行符\n
+
+#+BEGIN_SRC python
+  f = open("path", r, encoding='utf8')
+
+  f.read()  //读取所有内容
+
+  ｆ.seek(0) //重置文件指针
+
+  print(f.read())
+
+  ｆ.close()
+
+  for line in f:
+      print(line, end='') //\n替换为空
+
+#+END_SRC
+
+
+#+BEGIN_SRC python
+  import os
+
+  os.getcwd()
+
+  os.chdir('newpath')
+
+  //通过改变路径,可以使用相对路径
+
+  course = open('path', 'w', encoding='utf8')
+
+  course.write('abc')
+
+  names = ['tom', 'jerry']
+
+  course.writelines(names) //写到了一行
+
+  names = [name + '\n' for name in names]
+
+  course.writelines(names) //写到了多行
+
+  dourse.flush()
+
+  course.close()
+
+  //不用显示的调用close
+  with open('path', 'a') as f:
+    f.write('hello')
+
+
+
+#+END_SRC
+
+
+
+
 * 程序单元类型
+强制缩进, 建议使用四个空格
+
 * 其他
 #+BEGIN_SRC python
   type(8)
