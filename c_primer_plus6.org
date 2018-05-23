@@ -11,3 +11,25 @@
   int x = 100;
   printf("ddec = %d; octal = %#o; hex = %#x\n", x, x, x);
 #+END_SRC
+
+* int类型的选择
+对于long类型比int类型大的系统，使用long会减慢运算速度，如非必要必要使用long
+对于long类型与int类型相同的系统，如果要使用32位的整数，请使用long，便于一直到16位机器时，仍然能够正常运行。
+如果确实需要使用64位的整数，请使用long long
+除非必要，不用short，short很少用，通常不太需要节省内存空间
+对于大常熟，编译器会自动选择类型是int，long int， unsigned long， long long， unsigned long long
+
+** 后缀表示
+| l或L                  | long               | 推荐用L |
+| ll或LL                | long long          |         |
+| 5ull 10LLU 6LLU  9ULL | unsigned long long |         |
+
+** 打印
+| %u             | unsigned ing  |
+| %ld            | long          |
+| %lx            | long 十六进制 |
+| %lo            | long 八进制   |
+| %h             | short         |
+| %hd  %ho       |               |
+| %lu            | unsigned long |
+| %ll %lld  %llu | long long     |
