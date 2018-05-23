@@ -1,0 +1,13 @@
+#+STARTUP: content
+#+TITLE: C Primer Plus Notes
+#+AUTHOR:      孙士杰
+#+DATE:       <2018-05-23 Wed>
+#+EMAIL:       sun.shijie5@ztesoft.com
+
+
+* 显示八进制 十六进制
+
+#+BEGIN_SRC C++
+  int x = 100;
+  printf("ddec = %d; octal = %#o; hex = %#x\n", x, x, x);
+#+END_SRC
