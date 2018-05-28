@@ -25,14 +25,19 @@
 | 5ull 10LLU 6LLU  9ULL | unsigned long long |         |
 
 ** 打印
-| %u             | unsigned ing  |
-| %ld            | long          |
-| %lx            | long 十六进制 |
-| %lo            | long 八进制   |
-| %h             | short         |
-| %hd  %ho       |               |
-| %lu            | unsigned long |
-| %ll %lld  %llu | long long     |
+| %u             | unsigned ing       |
+| %ld            | long               |
+| %lx            | long 十六进制      |
+| %lo            | long 八进制        |
+| %h             | short              |
+| %hd  %ho       |                    |
+| %lu            | unsigned long      |
+| %ll %lld  %llu | long long          |
+| %zd            | sizeof             |
+| %%             | %                  |
+| %td            | 指针差值 ptrdiff_t |
+
+
 
 #+BEGIN_SRC C++
   /* print2.c-more printf() properties */
@@ -101,3 +106,121 @@ eg: 2.3F 4.32L
 下溢出  正常的下溢出 会损失尾数部分的精度，直到变成0
 NaN
 * 复数
+...
+* 字符串
+
+#+BEGIN_SRC C
+  char name[40];
+
+  printf("Your name of %zd letters occupies %zd memory cells.\n",
+         strlen(name), sizeof name);
+  sizeof(int);
+  sizeof name;
+  //圆括号的很少用时机取决于运算对象是类型还是特定量
+#+END_SRC
+
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #include <limits.h>    // integer limits
+  #include <float.h>     // floating-point limits
+  int main(void)
+  {
+      printf("Some number limits for this system:\n");
+      printf("Biggest int: %d\n", INT_MAX);
+      printf("Smallest long long: %lld\n", LLONG_MIN);
+      printf("One byte = %d bits on this system.\n", CHAR_BIT);
+      printf("Largest double: %e\n", DBL_MAX);
+      printf("Smallest normal float: %e\n", FLT_MIN);
+      printf("float precision = %d digits\n", FLT_DIG);
+      printf("float epsilon = %e\n", FLT_EPSILON);
+
+      return 0;
+  }
+
+#+END_SRC
+
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #define PAGES 959
+  int main(void)
+  {
+      printf("*%d*\n", PAGES);
+      printf("*%2d*\n", PAGES);
+      printf("*%10d*\n", PAGES);
+      printf("*%-10d*\n", PAGES);
+
+      return 0;
+  }
+
+  ,*959*
+  ,*959*
+  ,*       959*
+  ,*959       *
+#+END_SRC
+
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+
+  int main(void)
+  {
+      const double RENT = 3852.99;  // const-style constant
+
+      printf("*%f*\n", RENT);
+      printf("*%e*\n", RENT);
+      printf("*%4.2f*\n", RENT);
+      printf("*%3.1f*\n", RENT);
+      printf("*%10.3f*\n", RENT);
+      printf("*%10.3E*\n", RENT);
+      printf("*%+4.2f*\n", RENT);
+      printf("*%010.2f*\n", RENT);
+
+      return 0;
+  }
+
+  ,*3852.990000*
+  ,*3.852990e+03*
+  ,*3852.99*
+  ,*3853.0*
+  ,*  3852.990*
+  ,* 3.853E+03*
+  ,*+3852.99*
+  ,*0003852.99*
+
+#+END_SRC
+
+
+#+BEGIN_SRC C
+  /* flags.c -- illustrates some formatting flags */
+  #include <stdio.h>
+  int main(void)
+  {
+      printf("%x %X %#x\n", 31, 31, 31);
+      printf("**%d**% d**% d**\n", 42, 42, -42);
+      printf("**%5d**%5.3d**%05d**%05.3d**\n", 6, 6, 6, 6);
+
+      return 0;
+  }
+#+END_SRC
+
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #define BLURB "Authentic imitation!"
+  int main(void)
+  {
+      printf("[%2s]\n", BLURB);
+      printf("[%24s]\n", BLURB);
+      printf("[%24.5s]\n", BLURB);
+      printf("[%-24.5s]\n", BLURB);
+      return 0;
+  }
+
+  [Authentic imitation!]
+  [    Authentic imitation!]
+  [                   Authe]
+  [Authe                   ]
+
+#+END_SRC
