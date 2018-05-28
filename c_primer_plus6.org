@@ -33,3 +33,71 @@
 | %hd  %ho       |               |
 | %lu            | unsigned long |
 | %ll %lld  %llu | long long     |
+
+#+BEGIN_SRC C++
+  /* print2.c-more printf() properties */
+  #include <stdio.h>
+  int main(void)
+  {
+      unsigned int un = 3000000000; /* system with 32-bit int */
+      short end = 200;              /* and 16-bit short       */
+      long big = 65537;
+      long long verybig = 12345678908642;
+
+      printf("un = %u and not %d\n", un, un);
+      printf("end = %hd and %d\n", end, end);
+      printf("big = %ld and not %hd\n", big, big);
+      printf("verybig= %lld and not %ld\n", verybig, verybig);
+
+      return 0;
+  }
+
+//outpur
+un = 3000000000 and not -1294967296  //无符号数使用%d打印，越界会变成负值
+end = 200 and 200  //传递参数时会把short转int，int传递参数更高效的
+big = 65537 and not 1 //long使用%hd打印会截断，只取后16位
+verybig= 12345678908642 and not 12345678908642  //long long 使用%ld打印也会截断，只取后32位
+#+END_SRC
+*
+* 可移植类型
+** stdint.h
+精确宽度整数类型 int32_t
+** inttypes.h
+最小宽度类型 int_least8_t
+最快最小宽度类型 int_fast8_t
+最大的有符号数类型 int_max_t
+
+* 浮点数
+可表示很大或很小的数
+float   32位  8位用于指数数值和符号  24位用于非指数部分  小数点后可精确到6位有效数字
+double  64位
+long double 无标准
+eg: 2.3F 4.32L
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+  int main(void)
+  {
+      float aboat = 32000.0;
+      double abet = 2.14e9;
+      long double dip = 5.32e-5;
+
+      printf("%f can be written %e\n", aboat, aboat);
+      // next line requires C99 or later compliance
+      printf("And it's %a in hexadecimal, powers of 2 notation\n", aboat);
+      printf("%f can be written %e\n", abet, abet);
+      printf("%Lf can be written %Le\n", dip, dip);
+
+      return 0;
+  }
+
+  32000.000000 can be written 3.200000e+04
+  And it's 0x1.f4p+14 in hexadecimal, powers of 2 notation
+  2140000000.000000 can be written 2.140000e+09
+  0.000053 can be written 5.320000e-05
+#+END_SRC
+** overflow
+上溢 会变成无穷大的特定值 inf
+下溢出  正常的下溢出 会损失尾数部分的精度，直到变成0
+NaN
+* 复数
