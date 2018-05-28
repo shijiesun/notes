@@ -107,8 +107,8 @@ eg: 2.3F 4.32L
 NaN
 * 复数
 ...
-* 字符串
-
+* 输入输出
+** printf
 #+BEGIN_SRC C
   char name[40];
 
@@ -224,3 +224,47 @@ NaN
   [Authe                   ]
 
 #+END_SRC
+
+
+#+BEGIN_SRC C
+  /* varwid.c -- uses variable-width output field */
+  #include <stdio.h>
+  int main(void)
+  {
+      unsigned width, precision;
+      int number = 256;
+      double weight = 242.5;
+
+      printf("Enter a field width:\n");
+      scanf("%d", &width);
+      printf("The number is :%*d:\n", width, number);
+      printf("Now enter a width and a precision:\n");
+      scanf("%d %d", &width, &precision);
+      printf("Weight = %*.*f\n", width, precision, weight);
+      printf("Done!\n");
+
+      return 0;
+  }
+
+#+END_SRC
+使用星号表示宽度和精度
+
+** scanf
+
+#+BEGIN_SRC C
+  /* skiptwo.c -- skips over first two integers of input */
+  #include <stdio.h>
+  int main(void)
+  {
+      int n;
+
+      printf("Please enter three integers:\n");
+      scanf("%*d %*d %d", &n);
+      printf("The last integer was %d\n", n);
+
+      return 0;
+  }
+
+#+END_SRC
+
+星号表示跳过
