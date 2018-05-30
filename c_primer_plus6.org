@@ -268,3 +268,40 @@ NaN
 #+END_SRC
 
 星号表示跳过
+*
+* 数组和字符串
+
+#+BEGIN_SRC C
+  const char m[] = "hello world";
+  const char * p = "nihao";
+#+END_SRC
+初始化数组把静态存储区的字符串拷贝到数组中，而初始化指针只把字符串的地址拷贝给指针。
+m的内容可以更改，而p指向的内容不能更改
+
+#+BEGIN_SRC C
+  //  addresses.c  -- addresses of strings
+  #define MSG "I'm special."
+
+  #include <stdio.h>
+  int main()
+  {
+      char ar[] = MSG;
+      const char *pt = MSG;
+      printf("address of \"I'm special\": %p \n", "I'm special");
+      printf("              address ar: %p\n", ar);
+      printf("              address pt: %p\n", pt);
+      printf("          address of MSG: %p\n", MSG);
+      printf("address of \"I'm special\": %p \n", "I'm special");
+
+      return 0;
+  }
+
+  address of "I'm special": 0x4006c0
+  address ar: 0x7ffe187eb3cf
+  address pt: 0x400694
+  address of MSG: 0x400694
+  address of "I'm special": 0x4006c0
+#+END_SRC
+
+"I'm special" 在程序中出现了两次，但是编译器只是用了一个存储位置
+静态数据使用的内存与ar使用的动态内存不同，不仅值不同，编译器甚至使用不同的位数表示两种内存
