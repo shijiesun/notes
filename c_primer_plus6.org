@@ -305,3 +305,64 @@ m的内容可以更改，而p指向的内容不能更改
 
 "I'm special" 在程序中出现了两次，但是编译器只是用了一个存储位置
 静态数据使用的内存与ar使用的动态内存不同，不仅值不同，编译器甚至使用不同的位数表示两种内存
+* 字符串输入和输出
+char * gets ( char * str );
+遇到换行符，丢弃换行符，并在字符的末尾添加一个空字符成为一个C字符串
+gets()函数由于不检查缓存区是否越界，标准已经不建议使用gets()，
+
+替代方案：fgets() gets_s
+char * fgets ( char * str, int num, FILE * stream );
+读取num-1个字符，或者遇到第一个换行符
+fgets会读到一个换行符，并把他存到字符串中
+字符串末尾也会加入一个空字符结尾
+与fputs配对使用
+
+int puts ( const char * str );
+会在输出的字符串后加上换行符
+一直输出直到遇到一个换行符
+
+int fputs ( const char * str, FILE * stream );
+不会在输出的字符串末尾加换行符
+返回指向str的指针，如果督导文件结尾，将返回空指针
+与fgets配合使用
+
+#+BEGIN_SRC C
+  #include <stdio.h>
+  #define STLEN 10
+  int main(void)
+  {
+      char words[STLEN];
+
+      puts("Enter strings (empty line to quit):");
+      while (fgets(words, STLEN, stdin) != NULL && words[0] != '\n')
+          fputs(words, stdout);
+      puts("Done.");
+
+      return 0;
+  }
+
+#+END_SRC
+
+虽然缓冲区很小，但是输入很长的行完全没有问题，会自动接上，fgets和fputs配合的天衣无缝
+
+gets_s（char & str, int num） C11
+只存标准输入中读取数据
+遇到换行符则丢弃
+如果最大字符数没有督导换行符，需要特殊的处理函数。
+
+如果缓存区装得下输入航，gets() fgets() gets_s都不会有问题，fgets会保留换行符作为字符串的一部分
+
+如果输入的行太长，
+gets()会不安全，
+gets_s安全，如果不希望程序种植，就需要编写处理函数，gets_s会丢弃输入航的其余字符
+fgets() 安全方便，最佳选择
+
+scanf 可以理解为获取单词的函数
+* 字符串转数字
+atoi atol atof 等
+long int strtol (const char* str, char** endptr, int base);
+相比与上面的函数，可以识别字符创中的首字符是否是数字，还可以指定转换的进制
+
+
+itoa ftoa
+用sprintf()代替，兼容性更好
