@@ -1,0 +1,8 @@
+#+STARTUP: content
+#+TITLE: python notes
+#+AUTHOR:      孙士杰
+#+DATE:       <2018-05-30 Wed>
+#+EMAIL:       ssj280@gmail.com
+
+* 基础
+下划线（_）表示最后一个表达式的值
