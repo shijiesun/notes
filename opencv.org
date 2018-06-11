@@ -1,0 +1,19 @@
+#+STARTUP: content
+#+TITLE:       opencv notes
+#+AUTHOR:      孙士杰
+#+DATE:        <2018-06-11 Mon>
+#+EMAIL:       ssj280@gmail.com
+
+* history
+最初由intel的一个小组开发，1.0版本与2006年10月19日发布
+* opencv2  2009.10
+带来了全新的c++接口,将opencv的能力无限放大
+增加了全新的平台支持ios和Android
+通过cuda和opencl实现了gpu的加速
+为python和java用户提供了接口
+
+* opencv3 2014.8
+全新的项目架构的改变，宣告了计算机视觉新时代的来临
+抛弃了整体统一的架构，使用内核+插件的架构形式，自身主体更加稳定，附加的库可以更加灵活多变
+
+* 学习官方文档
