@@ -2,7 +2,7 @@
 #+TITLE: python notes
 #+AUTHOR:      孙士杰
 #+DATE:       <2018-05-17 Thu>
-#+EMAIL:       sun.shijie5@ztesoft.com
+#+EMAIL:       ssj280@gmail.com
 
 * 类型
 动态类型  强类型
@@ -28,7 +28,7 @@
 
 * 数值
 ** int
-没有长度限制,可以处理非常大的数字
+没有长度限制,可以处理非常大的数字,仅受限于用户计算机达到虚拟内存总数
 0b1 0o7 0x7ff
 ** float
 3.14e5
