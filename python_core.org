@@ -1,8 +1,44 @@
 #+STARTUP: content
-#+TITLE: python notes
+#+TITLE: python core
 #+AUTHOR:      孙士杰
 #+DATE:       <2018-05-30 Wed>
 #+EMAIL:       ssj280@gmail.com
 
 * 基础
 下划线（_）表示最后一个表达式的值
+
+#+BEGIN_SRC python
+  print "%s is number %d" % ("python", 1)
+
+  import sys
+  print >> sys.stderr "fatal error"
+
+  logfile = open("/tmp/a.txt", a)
+  print >> logfile "fatal error"
+  logfile.close()
+
+  usr = raw_input("Enter login name:")
+
+  print "Your login is:", usr
+
+  def foo()
+      "This is a function" #文档字符串
+      return True
+
+  squared = [x ** 2 for x in range(4)] #列表解析
+
+  a is b //判断两个变量是否只想同一个对象
+  a is not b
+
+  a, b = -4, 12
+
+  cmp(a, b)//内建函数cmp用于比较两个对象，如果时自定义对象则调用类的__cmp__()方法
+
+  str() 返回对用户友好的字符串表示
+  repr() 返回对python友好的字符串
+  obj == eval(repr(obj))
+
+  isinstance(num, (int, long, float, complex))
+
+
+#+END_SRC
